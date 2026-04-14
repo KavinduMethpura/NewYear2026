@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Year Surprise 2026</title>
+    <meta
+      name="description"
+      content="A personalized New Year greeting card with fireworks, confetti, and music."
+    />
+    <meta property="og:title" content="A Special New Year Surprise" />
+    <meta
+      property="og:description"
+      content="Open this New Year letter and celebrate with fireworks."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-deep: #0b1220;
+        --bg-mid: #111b30;
+        --bg-soft: #1f2f4d;
+        --gold: #f7c45c;
+        --gold-2: #ffe8a8;
+        --ink: #122138;
+        --paper: #fffaf0;
+        --paper-edge: #f2dec1;
+        --accent: #6ce2ff;
+        --text-light: #f4f7ff;
+        --text-dim: #b9c6e3;
+        --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        font-family: "Outfit", sans-serif;
+        color: var(--text-light);
+        background:
+          radial-gradient(circle at 20% 20%, #1b2f56 0%, transparent 35%),
+          radial-gradient(circle at 80% 15%, #2c204a 0%, transparent 30%),
+          radial-gradient(circle at 50% 85%, #17323f 0%, transparent 35%),
+          linear-gradient(
+            145deg,
+            var(--bg-deep) 0%,
+            var(--bg-mid) 45%,
+            #121a2d 100%
+          );
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.2;
+        background-image: radial-gradient(#ffffff 1px, transparent 1px);
+        background-size: 3px 3px;
+        mix-blend-mode: screen;
+        animation: drift 32s linear infinite;
+      }
+
+      @keyframes drift {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-120px);
+        }
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .glow {
+        position: fixed;
+        width: 45vw;
+        max-width: 520px;
+        height: 45vw;
+        max-height: 520px;
+        border-radius: 999px;
+        filter: blur(54px);
+        pointer-events: none;
+        opacity: 0.35;
+        z-index: 1;
+      }
+
+      .glow.one {
+        background: #ffd080;
+        top: -120px;
+        left: -120px;
+        animation: pulse 5s ease-in-out infinite alternate;
+      }
+
+      .glow.two {
+        background: #78dbff;
+        right: -140px;
+        bottom: -140px;
+        animation: pulse 6s ease-in-out infinite alternate-reverse;
+      }
+
+      @keyframes pulse {
+        from {
+          transform: scale(0.9);
+        }
+        to {
+          transform: scale(1.08);
+        }
+      }
+
+      .card-shell {
+        width: min(920px, 96vw);
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 26px;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .top-strip {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        align-items: center;
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          90deg,
+          rgba(247, 196, 92, 0.17),
+          rgba(108, 226, 255, 0.08)
+        );
+      }
+
+      .chip {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: var(--gold-2);
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .music-toggle {
+        border: none;
+        color: #07203b;
+        background: linear-gradient(180deg, #ffe7a7, #f7c45c);
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 10px 16px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .music-toggle:hover {
+        transform: translateY(-1px);
+      }
+
+      .body-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 0;
+      }
+
+      .intro-panel {
+        padding: 38px 30px 36px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(
+          180deg,
+          rgba(12, 26, 51, 0.75),
+          rgba(9, 18, 35, 0.65)
+        );
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 0.9rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        margin: 0;
+        line-height: 1;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 5vw, 4.5rem);
+        font-weight: 700;
+        color: var(--gold-2);
+      }
+
+      .lead {
+        margin: 14px 0 28px;
+        color: var(--text-dim);
+        line-height: 1.6;
+        max-width: 42ch;
+      }
+
+      .open-btn {
+        background: linear-gradient(180deg, #6ce2ff, #2fb8dd);
+        color: #05263c;
+        font-weight: 700;
+        border: none;
+        padding: 14px 22px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 8px 24px rgba(34, 157, 200, 0.35);
+      }
+
+      .open-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 26px rgba(34, 157, 200, 0.45);
+      }
+
+      .share-block {
+        margin-top: 28px;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .share-block p {
+        margin: 0 0 10px;
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .share-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .share-btn {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #f7fbff;
+        background: rgba(6, 26, 49, 0.78);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .letter-stage {
+        display: grid;
+        place-items: center;
+        min-height: 500px;
+        padding: 26px;
+        position: relative;
+      }
+
+      .letter {
+        width: min(420px, 90%);
+        min-height: 430px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, var(--paper), #fff4de);
+        border: 1px solid var(--paper-edge);
+        color: var(--ink);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+        padding: 30px 30px 28px;
+        opacity: 0;
+        transform: translateY(24px) scale(0.95);
+        transition: 900ms cubic-bezier(0.2, 0.75, 0.22, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .letter::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          130deg,
+          rgba(255, 226, 159, 0.3),
+          transparent 30%
+        );
+        pointer-events: none;
+      }
+
+      .letter h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 5vw, 2.6rem);
+        color: #7f4a00;
+        line-height: 1;
+      }
+
+      .letter p {
+        margin: 14px 0;
+        line-height: 1.6;
+        color: #253a57;
+      }
+
+      .signature {
+        margin-top: 18px;
+        font-weight: 700;
+        color: #5b2900;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.6rem;
+      }
+
+      .to-name,
+      .from-name {
+        color: #9b3f00;
+        font-weight: 700;
+      }
+
+      .seal {
+        position: absolute;
+        right: 20px;
+        bottom: 16px;
+        width: 68px;
+        height: 68px;
+        border-radius: 999px;
+        border: 2px solid rgba(133, 73, 0, 0.25);
+        display: grid;
+        place-items: center;
+        font-size: 0.7rem;
+        color: rgba(101, 58, 0, 0.78);
+        transform: rotate(-14deg);
+        background: rgba(255, 220, 167, 0.5);
+      }
+
+      .open .letter {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .hint {
+        margin-top: 14px;
+        font-size: 0.88rem;
+        color: var(--text-dim);
+      }
+
+      canvas.fx {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      .status {
+        margin-top: 10px;
+        font-size: 0.88rem;
+        color: var(--text-dim);
+        min-height: 1.2rem;
+      }
+
+      @media (max-width: 860px) {
+        .body-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .intro-panel {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .letter-stage {
+          min-height: 420px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow one" aria-hidden="true"></div>
+    <div class="glow two" aria-hidden="true"></div>
+    <canvas class="fx" id="fxCanvas"></canvas>
+
+    <main>
+      <section class="card-shell" id="cardRoot">
+        <div class="top-strip">
+          <div class="chip">2026 Celebration Letter</div>
+          <button class="music-toggle" id="musicToggle" type="button">
+            Play Music
+          </button>
+        </div>
+
+        <div class="body-wrap">
+          <section class="intro-panel">
+            <div class="eyebrow">A Special Surprise</div>
+            <h1>Happy New Year</h1>
+            <p class="lead">
+              A little sparkling letter made just for you. Tap the button, open
+              your celebration, and send this joy to someone special.
+            </p>
+
+            <button class="open-btn" id="openBtn" type="button">
+              Open New Year Letter
+            </button>
+            <div class="hint">
+              Tip: personalize with
+              <strong>?to=Name&amp;from=YourName</strong> in the URL.
+            </div>
+
+            <div class="share-block">
+              <p id="sharePreview">
+                🎉 I made a special New Year surprise for you! Open this link:
+              </p>
+              <div class="share-row">
+                <button class="share-btn" id="copyBtn" type="button">
+                  Copy Message
+                </button>
+                <button class="share-btn" id="waBtn" type="button">
+                  Share on WhatsApp
+                </button>
+              </div>
+              <div class="status" id="statusText"></div>
+            </div>
+          </section>
+
+          <section class="letter-stage" aria-live="polite">
+            <article class="letter" id="letter">
+              <h2>To <span class="to-name" id="toName">Friend</span>,</h2>
+              <p>
+                As the new year begins, may your days shine brighter, your
+                dreams grow bolder, and your heart stay full of peace and
+                laughter.
+              </p>
+              <p>
+                May every step in 2026 bring you meaningful moments, kind
+                people, and beautiful surprises.
+              </p>
+              <p>
+                Here is to fresh starts, brave goals, and magical nights under
+                fireworks.
+              </p>
+              <div class="signature">
+                With love,
+                <span class="from-name" id="fromName">Someone who cares</span>
+              </div>
+              <div class="seal">NY 2026</div>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(globalThis.location.search);
+
+        function safeName(value, fallback) {
+          if (!value) {
+            return fallback;
+          }
+          const cleaned = value.replaceAll(/[^a-zA-Z0-9 .'-]/g, "").trim();
+          return cleaned.slice(0, 36) || fallback;
+        }
+
+        const toName = safeName(params.get("to"), "Friend");
+        const fromName = safeName(params.get("from"), "Someone who cares");
+
+        const toEl = document.getElementById("toName");
+        const fromEl = document.getElementById("fromName");
+        const openBtn = document.getElementById("openBtn");
+        const cardRoot = document.getElementById("cardRoot");
+        const statusText = document.getElementById("statusText");
+        const sharePreview = document.getElementById("sharePreview");
+        const copyBtn = document.getElementById("copyBtn");
+        const waBtn = document.getElementById("waBtn");
+        const musicToggle = document.getElementById("musicToggle");
+
+        toEl.textContent = toName;
+        fromEl.textContent = fromName;
+
+        const shareMessage =
+          "🎉 I made a special New Year surprise for you! Open this link: " +
+          globalThis.location.href;
+        sharePreview.textContent = shareMessage;
+
+        copyBtn.addEventListener("click", async function () {
+          try {
+            await navigator.clipboard.writeText(shareMessage);
+            statusText.textContent = "Message copied. Paste it in WhatsApp.";
+          } catch (error) {
+            console.error("Clipboard copy failed", error);
+            statusText.textContent =
+              "Copy failed. Please copy manually from the message above.";
+          }
+        });
+
+        waBtn.addEventListener("click", function () {
+          const url = "https://wa.me/?text=" + encodeURIComponent(shareMessage);
+          globalThis.open(url, "_blank", "noopener");
+        });
+
+        let celebrationStarted = false;
+        openBtn.addEventListener("click", function () {
+          cardRoot.classList.add("open");
+          if (!celebrationStarted) {
+            celebrationStarted = true;
+            fx.start();
+            audio.start();
+            statusText.textContent =
+              "Your letter is open. Enjoy the celebration.";
+            openBtn.textContent = "Letter Opened";
+            openBtn.disabled = true;
+            openBtn.style.opacity = "0.75";
+            openBtn.style.cursor = "default";
+          }
+        });
+
+        const canvas = document.getElementById("fxCanvas");
+        const ctx = canvas.getContext("2d");
+        const DPR = Math.min(window.devicePixelRatio || 1, 2);
+        let width = 0;
+        let height = 0;
+        const particles = [];
+
+        function resize() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = Math.floor(width * DPR);
+          canvas.height = Math.floor(height * DPR);
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        }
+
+        window.addEventListener("resize", resize);
+        resize();
+
+        function spawnFirework(x, y) {
+          const burst = 50;
+          const hue = 30 + Math.random() * 50;
+          for (let i = 0; i < burst; i += 1) {
+            const angle = (Math.PI * 2 * i) / burst;
+            const speed = 1.1 + Math.random() * 3.6;
+            particles.push({
+              x,
+              y,
+              vx: Math.cos(angle) * speed,
+              vy: Math.sin(angle) * speed,
+              life: 82 + Math.random() * 24,
+              size: 1.8 + Math.random() * 2.4,
+              color:
+                "hsla(" + hue + ", 95%, " + (55 + Math.random() * 15) + "%, 1)",
+              gravity: 0.02,
+              drag: 0.99,
+            });
+          }
+        }
+
+        function spawnConfetti() {
+          const count = 80;
+          for (let i = 0; i < count; i += 1) {
+            particles.push({
+              x: Math.random() * width,
+              y: -14 - Math.random() * 40,
+              vx: -1 + Math.random() * 2,
+              vy: 2 + Math.random() * 2.8,
+              life: 160 + Math.random() * 100,
+              size: 4 + Math.random() * 6,
+              color: ["#f7c45c", "#ffe8a8", "#6ce2ff", "#ffffff"][
+                Math.floor(Math.random() * 4)
+              ],
+              gravity: 0.01,
+              drag: 0.997,
+              confetti: true,
+              rotate: Math.random() * Math.PI,
+            });
+          }
+        }
+
+        const fx = {
+          running: false,
+          nextFire: 0,
+          nextConfetti: 0,
+          start: function () {
+            if (this.running) {
+              return;
+            }
+            this.running = true;
+            this.nextFire = performance.now();
+            this.nextConfetti = performance.now() + 600;
+            spawnConfetti();
+            requestAnimationFrame(loop);
+          },
+        };
+
+        function loop(ts) {
+          if (!fx.running) {
+            return;
+          }
+
+          if (ts >= fx.nextFire) {
+            const px = width * (0.12 + Math.random() * 0.76);
+            const py = height * (0.15 + Math.random() * 0.36);
+            spawnFirework(px, py);
+            fx.nextFire = ts + 430 + Math.random() * 520;
+          }
+
+          if (ts >= fx.nextConfetti) {
+            spawnConfetti();
+            fx.nextConfetti = ts + 3800 + Math.random() * 2500;
+          }
+
+          ctx.clearRect(0, 0, width, height);
+
+          for (let i = particles.length - 1; i >= 0; i -= 1) {
+            const p = particles[i];
+            p.life -= 1;
+            if (p.life <= 0) {
+              particles.splice(i, 1);
+              continue;
+            }
+
+            p.vx *= p.drag;
+            p.vy *= p.drag;
+            p.vy += p.gravity;
+            p.x += p.vx;
+            p.y += p.vy;
+
+            const alpha = Math.max(0, Math.min(1, p.life / 120));
+            ctx.globalAlpha = alpha;
+            ctx.fillStyle = p.color;
+
+            if (p.confetti) {
+              p.rotate += 0.12;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate(p.rotate);
+              ctx.fillRect(-p.size / 2, -p.size / 3, p.size, p.size / 1.7);
+              ctx.restore();
+            } else {
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+
+          ctx.globalAlpha = 1;
+          requestAnimationFrame(loop);
+        }
+
+        function MusicLoop() {
+          this.ctx = null;
+          this.master = null;
+          this.playing = false;
+          this.timer = null;
+        }
+
+        MusicLoop.prototype.ensureContext = function () {
+          if (!this.ctx) {
+            const AudioCtx =
+              globalThis.AudioContext || globalThis.webkitAudioContext;
+            if (!AudioCtx) {
+              return false;
+            }
+            this.ctx = new AudioCtx();
+            this.master = this.ctx.createGain();
+            this.master.gain.value = 0.05;
+            this.master.connect(this.ctx.destination);
+          }
+          return true;
+        };
+
+        MusicLoop.prototype.note = function (freq, start, duration) {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = "triangle";
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.0001, start);
+          gain.gain.exponentialRampToValueAtTime(0.22, start + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+          osc.connect(gain);
+          gain.connect(this.master);
+          osc.start(start);
+          osc.stop(start + duration + 0.03);
+        };
+
+        MusicLoop.prototype.playPattern = function () {
+          const now = this.ctx.currentTime;
+          const beat = 0.38;
+          const melody = [392, 440, 523.25, 659.25, 523.25, 440, 392, 329.63];
+          for (let i = 0; i < melody.length; i += 1) {
+            this.note(melody[i], now + i * beat, beat * 0.9);
+          }
+        };
+
+        MusicLoop.prototype.start = function () {
+          if (!this.ensureContext()) {
+            statusText.textContent = "Music is not supported in this browser.";
+            return;
+          }
+
+          this.ctx
+            .resume()
+            .then(() => {
+              if (this.playing) {
+                return;
+              }
+              this.playing = true;
+              this.playPattern();
+              this.timer = globalThis.setInterval(() => {
+                this.playPattern();
+              }, 8 * 380);
+              musicToggle.textContent = "Pause Music";
+            })
+            .catch(() => {
+              statusText.textContent = "Tap Play Music to enable audio.";
+            });
+        };
+
+        MusicLoop.prototype.stop = function () {
+          if (!this.playing) {
+            return;
+          }
+          this.playing = false;
+          if (this.timer) {
+            globalThis.clearInterval(this.timer);
+            this.timer = null;
+          }
+          musicToggle.textContent = "Play Music";
+        };
+
+        const audio = new MusicLoop();
+
+        musicToggle.addEventListener("click", function () {
+          if (audio.playing) {
+            audio.stop();
+            statusText.textContent = "Music paused.";
+          } else {
+            audio.start();
+            statusText.textContent = "Music playing.";
+          }
+        });
+
+        document.addEventListener("pointerdown", function onFirstTap() {
+          if (audio.ensureContext() && audio.ctx.state === "suspended") {
+            audio.ctx.resume();
+          }
+          document.removeEventListener("pointerdown", onFirstTap);
+        });
+      })();
+    </script>
+  </body>
+</html>
