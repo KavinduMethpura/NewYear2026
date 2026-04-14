@@ -588,6 +588,15 @@
               Wishing you and your loved ones a joyful and prosperous Sinhala & Tamil New Year!</b>
             </p>
           </article>
+
+          <div class="audio-ui">
+            <button type="button" class="audio-btn" id="audioBtn" aria-pressed="false">
+              Play Music
+            </button>
+            <div class="audio-note" id="audioNote">
+              Tap to start the raban music.
+            </div>
+          </div>
         </section>
       </main>
 
@@ -602,7 +611,6 @@
         id="avuruduAudio"
         src="sound/raban.weba"
         preload="auto"
-        autoplay
         loop
       ></audio>
       <canvas id="sparkleCanvas"></canvas>
@@ -613,6 +621,8 @@
         const sun = document.getElementById("sun");
         const greetingCard = document.getElementById("greetingCard");
         const audio = document.getElementById("avuruduAudio");
+        const audioBtn = document.getElementById("audioBtn");
+        const audioNote = document.getElementById("audioNote");
         const canvas = document.getElementById("sparkleCanvas");
         const ctx = canvas.getContext("2d");
         const dpr = Math.min(globalThis.devicePixelRatio || 1, 2);
@@ -691,20 +701,43 @@
           requestAnimationFrame(loopSparkles);
         }
 
+        function setAudioState(isPlaying) {
+          audioBtn.textContent = isPlaying ? "Pause Music" : "Play Music";
+          audioBtn.setAttribute("aria-pressed", String(isPlaying));
+          audioNote.textContent = isPlaying
+            ? "Raban music is playing."
+            : "Music is paused.";
+        }
+
         function playAudio() {
-          audio.currentTime = 0;
-          audio.play().catch(() => {});
+          return audio.play().then(function () {
+            setAudioState(true);
+          });
         }
 
         greetingCard.addEventListener("animationend", function () {
           spawnSparkles();
         });
 
+        audioBtn.addEventListener("click", function () {
+          if (audio.paused) {
+            playAudio().catch(function () {
+              audioNote.textContent = "Unable to start audio on this device/browser.";
+            });
+          } else {
+            audio.pause();
+            setAudioState(false);
+          }
+        });
+
         resizeCanvas();
         globalThis.addEventListener("resize", resizeCanvas);
         animateSunrise();
         loopSparkles();
-        playAudio();
+        playAudio().catch(function () {
+          audioNote.textContent = "Autoplay blocked by browser. Tap Play Music.";
+          setAudioState(false);
+        });
       })();
     </script>
   </body>
